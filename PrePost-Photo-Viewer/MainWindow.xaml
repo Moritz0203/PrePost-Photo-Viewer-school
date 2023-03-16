@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrePost_Photo_Viewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1200" Width="1970">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="175" Margin="39,42,0,0" VerticalAlignment="Top" Width="187" Name="Image1"/>
-        <Image HorizontalAlignment="Left" Height="175" Margin="572,42,0,0" VerticalAlignment="Top" Width="187" Name="Image2"/>
-        <Button Content="Browse Image 2" HorizontalAlignment="Left" Margin="653,232,0,0" VerticalAlignment="Top" Name="BrowseButton2" Click="BrowseButton2_Click"/>
-        <Button Content="Browse Image 1" HorizontalAlignment="Left" Margin="80,222,0,0" VerticalAlignment="Top" Name="BrowseButton1" Click="BrowseButton1_Click"/>
-        <Button Content="Compare Button" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Name="CompareButton" Click="CompareButton_Click"/>
- 
+        <Image HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image1" Stretch="UniformToFill"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image2" Stretch="UniformToFill"/>
+        <Button Content="Browse Image 2" HorizontalAlignment="Left" Margin="127,1138,0,0" VerticalAlignment="Top" Name="BrowseButton2" Click="BrowseButton2_Click"/>
+        <Button Content="Browse Image 1" HorizontalAlignment="Left" Margin="34,1138,0,0" VerticalAlignment="Top" Name="BrowseButton1" Click="BrowseButton1_Click"/>
+        <Button Content="Compare Button" HorizontalAlignment="Left" Margin="254,1138,0,0" VerticalAlignment="Top" Name="CompareButton" Click="CompareButton_Click"/>
+        <Slider Name="sleider" HorizontalAlignment="Center" Margin="0,1080,0,0" VerticalAlignment="Top" Width="1300" ValueChanged="Slider_ValueChanged" Maximum="1300"/>
+        <RadioButton Name="Opacity" Content="Opacity" HorizontalAlignment="Left" Margin="372,1143,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton Name="Sleid" Content="Sleid" HorizontalAlignment="Left" Margin="462,1143,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

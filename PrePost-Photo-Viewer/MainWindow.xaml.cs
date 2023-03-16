@@ -32,21 +32,31 @@ namespace PrePost_Photo_Viewer
         private void BrowseButton1_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
                 image1 = new BitmapImage(new Uri(openFileDialog.FileName));
+                Image1.Width = image1.Width >= 1300 ? 1300 : image1.Width;
+                Image1.Height = image1.Height >= 990 ? 990 : image1.Height;
+
                 Image1.Source = image1;
+
             }
         }
         private void BrowseButton2_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
                 image2 = new BitmapImage(new Uri(openFileDialog.FileName));
+                Image2.Width = image2.Width >= 1300 ? 1300 : image2.Width;
+                Image2.Height = image2.Height >= 990 ? 990 : image2.Height;
+
                 Image2.Source = image2;
+
+                sleider.Width = Image2.Width;
+                sleider.Maximum = Image2.Width;
             }
         }
         private void CompareButton_Click(object sender, RoutedEventArgs e)
@@ -79,6 +89,19 @@ namespace PrePost_Photo_Viewer
             else
             {
                 MessageBox.Show("Please select two images to compare.", "Image Comparison Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (Sleid.IsChecked == true)
+                Image2.Width = sleider.Value;
+            else if (Opacity.IsChecked == true)
+            {
+                double slidervalu = e.NewValue;
+                double Opacity = 1 - slidervalu;
+                Image1.Opacity = slidervalu;
+                Image2.Opacity = Opacity;
             }
         }
     }
