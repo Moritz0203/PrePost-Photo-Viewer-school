@@ -12,6 +12,6 @@
         <Button Content="Browse Image 2" HorizontalAlignment="Left" Margin="653,232,0,0" VerticalAlignment="Top" Name="BrowseButton2" Click="BrowseButton2_Click"/>
         <Button Content="Browse Image 1" HorizontalAlignment="Left" Margin="80,222,0,0" VerticalAlignment="Top" Name="BrowseButton1" Click="BrowseButton1_Click"/>
         <Button Content="Compare Button" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Name="CompareButton" Click="CompareButton_Click"/>
-
+ 
     </Grid>
 </Window>
