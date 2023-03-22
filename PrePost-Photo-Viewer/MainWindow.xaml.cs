@@ -36,11 +36,13 @@ namespace PrePost_Photo_Viewer
             if (openFileDialog.ShowDialog() == true)
             {
                 image1 = new BitmapImage(new Uri(openFileDialog.FileName));
-                Image1.Width = image1.Width >= 1300 ? 1300 : image1.Width;
-                Image1.Height = image1.Height >= 990 ? 990 : image1.Height;
+                Image1.Width = image1.Width >= 1050 ? 1050 : image1.Width;
+                Image1.Height = image1.Height >= 800 ? 800 : image1.Height;
 
                 Image1.Source = image1;
 
+                sleider.Width = Image1.Width;
+                sleider.Maximum = Image1.Width;
             }
         }
         private void BrowseButton2_Click(object sender, RoutedEventArgs e)
@@ -50,45 +52,12 @@ namespace PrePost_Photo_Viewer
             if (openFileDialog.ShowDialog() == true)
             {
                 image2 = new BitmapImage(new Uri(openFileDialog.FileName));
-                Image2.Width = image2.Width >= 1300 ? 1300 : image2.Width;
-                Image2.Height = image2.Height >= 990 ? 990 : image2.Height;
+                Image2.Width = image2.Width >= 1050 ? 1050 : image2.Width;
+                Image2.Height = image2.Height >= 800 ? 800 : image2.Height;
 
                 Image2.Source = image2;
 
-                sleider.Width = Image2.Width;
-                sleider.Maximum = Image2.Width;
-            }
-        }
-        private void CompareButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (image1 != null && image2 != null)
-            {
-                if (image1.Width == image2.Width && image1.Height == image2.Height)
-                {
-                    int pixelCount = image1.PixelWidth * image1.PixelHeight;
-                    int differentPixels = 0;
-                    byte[] pixels1 = new byte[pixelCount * 4];
-                    image1.CopyPixels(pixels1, image1.PixelWidth * 4, 0);
-                    byte[] pixels2 = new byte[pixelCount * 4];
-                    image2.CopyPixels(pixels2, image2.PixelWidth * 4, 0);
-                    for (int i = 0; i < pixelCount * 4; i++)
-                    {
-                        if (pixels1[i] != pixels2[i])
-                        {
-                            differentPixels++;
-                        }
-                    }
-                    double differencePercentage = (double)differentPixels / (double)pixelCount * 100;
-                    MessageBox.Show($"The images differ in {differencePercentage}% of their pixels.", "Image Comparison Result", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show("The images have different dimensions and cannot be compared.", "Image Comparison Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select two images to compare.", "Image Comparison Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
         }
 
@@ -98,6 +67,7 @@ namespace PrePost_Photo_Viewer
                 Image2.Width = sleider.Value;
             else if (Opacity.IsChecked == true)
             {
+                Image2.Width = image2.Width >= 1050 ? 1050 : image2.Width;
                 double slidervalu = e.NewValue;
                 double Opacity = 1 - slidervalu;
                 Image1.Opacity = slidervalu;
