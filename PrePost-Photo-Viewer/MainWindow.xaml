@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow"  Background="White">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image1" Stretch="UniformToFill"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image2" Stretch="UniformToFill"/>
-        <Button Content="Browse Image 2" HorizontalAlignment="Left" Margin="112,943,0,0" VerticalAlignment="Top" Name="BrowseButton2" Click="BrowseButton2_Click"/>
-        <Button Content="Browse Image 1" HorizontalAlignment="Left" Margin="19,943,0,0" VerticalAlignment="Top" Name="BrowseButton1" Click="BrowseButton1_Click"/>
-        <Slider Name="sleider" HorizontalAlignment="Left" Margin="320,885,0,0" VerticalAlignment="Top" Width="1300" ValueChanged="Slider_ValueChanged" Maximum="1300"/>
-        <RadioButton Name="Opacity" Foreground="Black" Content="Opacity" HorizontalAlignment="Left" Margin="357,948,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton Name="Sleid" Foreground="Black" Content="Sleid" HorizontalAlignment="Left" Margin="447,948,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <Image Visibility="Hidden" HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image1" Stretch="UniformToFill"/>
+        <Image Visibility="Hidden" HorizontalAlignment="Left" Height="50" Margin="320,50,0,0" VerticalAlignment="Top" Width="50" Name="Image2" Stretch="UniformToFill"/>
+        <Button Visibility="Hidden" Content="Browse Image 2" HorizontalAlignment="Left" Margin="112,943,0,0" VerticalAlignment="Top" Name="BrowseButton2" Click="BrowseButton2_Click"/>
+        <Button Visibility="Hidden" Content="Browse Image 1" HorizontalAlignment="Left" Margin="19,943,0,0" VerticalAlignment="Top" Name="BrowseButton1" Click="BrowseButton1_Click"/>
+        <Slider Visibility="Hidden" Name="sleider" HorizontalAlignment="Left" Margin="320,885,0,0" VerticalAlignment="Top" Width="1300" ValueChanged="Slider_ValueChanged" Maximum="1300"/>
+        <RadioButton Name="Compare" Checked="Radio_Checked" Foreground="Black" Content="Compare" HorizontalAlignment="Left" Margin="357,948,0,0" VerticalAlignment="Top" />
+        <RadioButton Name="Sleid" Checked="Radio_Checked" Foreground="Black" Content="Sleid" HorizontalAlignment="Left" Margin="447,948,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <Image Source="/_1060713.JPG" HorizontalAlignment="Left" Height="600" Margin="15,200,0,0" VerticalAlignment="Top" Width="800"/>
+        <Image HorizontalAlignment="Left" Height="450" Margin="825,300,0,0" VerticalAlignment="Top" Width="550" Source="/1060713.jpg"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=45}" Margin="1400,0,0,0" Name="ListBoxImages"/>
     </Grid>
 </Window>

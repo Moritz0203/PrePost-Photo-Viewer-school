@@ -56,24 +56,42 @@ namespace PrePost_Photo_Viewer
                 Image2.Height = image2.Height >= 800 ? 800 : image2.Height;
 
                 Image2.Source = image2;
-
-
             }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            Image2.Width = sleider.Value;
+        }
+
+        private void Radio_Checked(object sender, RoutedEventArgs e)
+        {
             if (Sleid.IsChecked == true)
-                Image2.Width = sleider.Value;
-            else if (Opacity.IsChecked == true)
             {
-                Image2.Width = image2.Width >= 1050 ? 1050 : image2.Width;
-                double slidervalu = e.NewValue;
-                double Opacity = 1 - slidervalu;
-                Image1.Opacity = slidervalu;
-                Image2.Opacity = Opacity;
+                SliderVisible();
             }
+            else if (Compare.IsChecked == true)
+            {
+                CompareVisible();
+            }
+        }
+
+        void SliderVisible()
+        {
+            Image1.Visibility = Visibility.Visible;
+            Image2.Visibility = Visibility.Visible;
+            BrowseButton1.Visibility = Visibility.Visible;
+            BrowseButton2.Visibility = Visibility.Visible;
+            sleider.Visibility = Visibility.Visible;
+        }
+
+        void CompareVisible()
+        {
+            Image1.Visibility = Visibility.Hidden;
+            Image2.Visibility = Visibility.Hidden;
+            BrowseButton1.Visibility = Visibility.Hidden;
+            BrowseButton2.Visibility = Visibility.Hidden;
+            sleider.Visibility = Visibility.Hidden;
         }
     }
 }
-

@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="1060713.jpg" />
+    <None Remove="BMW-S55-6-cylinder-engine.jpg" />
+    <None Remove="_1060713.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1060713.jpg" />
+    <Resource Include="BMW-S55-6-cylinder-engine.jpg" />
+    <Resource Include="_1060713.JPG" />
+  </ItemGroup>
+
 </Project>
